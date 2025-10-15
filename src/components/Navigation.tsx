@@ -50,27 +50,28 @@ export const Navigation = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-6xl"
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-6xl"
       >
         <div
-          className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-2xl px-6 py-4"
+          className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl sm:rounded-2xl px-4 py-3 sm:px-6 sm:py-4"
           style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)' }}
         >
           <div className="flex justify-between items-center">
             <motion.div
-              className="text-2xl font-bold bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text text-transparent"
+              className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text text-transparent"
               style={{ fontFamily: 'Orbitron, sans-serif' }}
               whileHover={{ scale: 1.05 }}
             >
               SUJAL.T
             </motion.div>
 
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-4 lg:space-x-8">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className={`relative text-sm font-semibold transition-colors ${
+                  className={`relative text-xs lg:text-sm font-semibold transition-colors ${
                     activeSection === link.href.substring(1)
                       ? 'text-gray-300'
                       : 'text-gray-500 hover:text-gray-300'
@@ -110,8 +111,8 @@ export const Navigation = () => {
           className="fixed inset-0 z-30 md:hidden"
         >
           <div className="absolute inset-0 bg-black/80 backdrop-blur-lg" onClick={() => setIsOpen(false)} />
-          <motion.div className="absolute right-0 top-0 h-full w-64 bg-[#1a1a1a] border-l border-gray-700 p-8">
-            <div className="flex flex-col space-y-6 mt-20">
+          <motion.div className="absolute right-0 top-0 h-full w-64 sm:w-72 bg-[#1a1a1a] border-l border-gray-700 p-6 sm:p-8">
+            <div className="flex flex-col space-y-5 sm:space-y-6 mt-16 sm:mt-20">
               {navLinks.map((link, index) => (
                 <motion.button
                   key={link.name}

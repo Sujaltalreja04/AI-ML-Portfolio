@@ -57,11 +57,11 @@ export const ContactSection = () => {
     <section
       id="contact"
       ref={ref}
-      className="min-h-screen flex items-center justify-center py-20 relative"
+      className="min-h-screen flex items-center justify-center py-16 md:py-20 relative"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.h2
-          className="text-4xl md:text-6xl font-bold mb-16 text-center bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-10 md:mb-16 text-center bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text text-transparent"
           style={{ fontFamily: 'Orbitron, sans-serif' }}
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
@@ -76,9 +76,9 @@ export const ContactSection = () => {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             onSubmit={handleSubmit}
-            className="space-y-6 mb-12"
+            className="space-y-4 md:space-y-6 mb-8 md:mb-12"
           >
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
               <motion.div variants={itemVariants}>
                 <input
                   type="text"
@@ -87,7 +87,7 @@ export const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Your Name"
                   required
-                  className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl px-6 py-4 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[rgba(192,192,192,0.5)] transition-all"
+                  className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl px-4 py-3 md:px-6 md:py-4 text-sm md:text-base text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[rgba(192,192,192,0.5)] transition-all"
                   style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)' }}
                 />
               </motion.div>
@@ -100,7 +100,7 @@ export const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Your Email"
                   required
-                  className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl px-6 py-4 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[rgba(192,192,192,0.5)] transition-all"
+                  className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl px-4 py-3 md:px-6 md:py-4 text-sm md:text-base text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[rgba(192,192,192,0.5)] transition-all"
                   style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)' }}
                 />
               </motion.div>
@@ -114,7 +114,7 @@ export const ContactSection = () => {
                 onChange={handleChange}
                 placeholder="Subject"
                 required
-                className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl px-6 py-4 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[rgba(192,192,192,0.5)] transition-all"
+                className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl px-4 py-3 md:px-6 md:py-4 text-sm md:text-base text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[rgba(192,192,192,0.5)] transition-all"
                 style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)' }}
               />
             </motion.div>
@@ -127,7 +127,7 @@ export const ContactSection = () => {
                 placeholder="Your Message"
                 required
                 rows={6}
-                className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl px-6 py-4 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[rgba(192,192,192,0.5)] transition-all resize-none"
+                className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl px-4 py-3 md:px-6 md:py-4 text-sm md:text-base text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[rgba(192,192,192,0.5)] transition-all resize-none"
                 style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)' }}
               />
             </motion.div>
@@ -136,7 +136,7 @@ export const ContactSection = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.3)] rounded-xl px-8 py-4 text-gray-300 font-semibold flex items-center justify-center gap-3"
+                className="w-full backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.3)] rounded-lg md:rounded-xl px-6 py-3 md:px-8 md:py-4 text-sm md:text-base text-gray-300 font-semibold flex items-center justify-center gap-2 md:gap-3"
                 style={{
                   fontFamily: 'Orbitron, sans-serif',
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
@@ -167,7 +167,7 @@ export const ContactSection = () => {
                   </>
                 ) : (
                   <>
-                    <Send size={20} />
+                    <Send className="w-4 h-4 md:w-5 md:h-5" />
                     SEND MESSAGE
                   </>
                 )}
@@ -179,78 +179,78 @@ export const ContactSection = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6"
           >
             <motion.div
               variants={itemVariants}
-              className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl p-6 text-center"
+              className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl p-4 md:p-6 text-center"
               whileHover={{
                 scale: 1.05,
                 boxShadow: '0 0 30px rgba(192, 192, 192, 0.3)',
               }}
             >
               <motion.div
-                className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center"
+                className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <Mail className="w-8 h-8 text-gray-300" />
+                <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-gray-300" />
               </motion.div>
               <div
-                className="font-bold text-gray-300 mb-2"
+                className="text-sm md:text-base font-bold text-gray-300 mb-1 md:mb-2"
                 style={{ fontFamily: 'Orbitron, sans-serif' }}
               >
                 EMAIL
               </div>
-              <div className="text-gray-400 text-sm">sujal@example.com</div>
+              <div className="text-gray-400 text-xs md:text-sm">sujal@example.com</div>
             </motion.div>
 
             <motion.div
               variants={itemVariants}
-              className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl p-6 text-center"
+              className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl p-4 md:p-6 text-center"
               whileHover={{
                 scale: 1.05,
                 boxShadow: '0 0 30px rgba(192, 192, 192, 0.3)',
               }}
             >
               <motion.div
-                className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center"
+                className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <Phone className="w-8 h-8 text-gray-300" />
+                <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-gray-300" />
               </motion.div>
               <div
-                className="font-bold text-gray-300 mb-2"
+                className="text-sm md:text-base font-bold text-gray-300 mb-1 md:mb-2"
                 style={{ fontFamily: 'Orbitron, sans-serif' }}
               >
                 PHONE
               </div>
-              <div className="text-gray-400 text-sm">+1 (555) 123-4567</div>
+              <div className="text-gray-400 text-xs md:text-sm">+1 (555) 123-4567</div>
             </motion.div>
 
             <motion.div
               variants={itemVariants}
-              className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl p-6 text-center"
+              className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl p-4 md:p-6 text-center"
               whileHover={{
                 scale: 1.05,
                 boxShadow: '0 0 30px rgba(192, 192, 192, 0.3)',
               }}
             >
               <motion.div
-                className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center"
+                className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <MapPin className="w-8 h-8 text-gray-300" />
+                <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-gray-300" />
               </motion.div>
               <div
-                className="font-bold text-gray-300 mb-2"
+                className="text-sm md:text-base font-bold text-gray-300 mb-1 md:mb-2"
                 style={{ fontFamily: 'Orbitron, sans-serif' }}
               >
                 LOCATION
               </div>
-              <div className="text-gray-400 text-sm">Global Remote</div>
+              <div className="text-gray-400 text-xs md:text-sm">Global Remote</div>
             </motion.div>
           </motion.div>
         </div>

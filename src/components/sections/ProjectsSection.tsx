@@ -81,11 +81,11 @@ export const ProjectsSection = () => {
     <section
       id="projects"
       ref={ref}
-      className="min-h-screen flex items-center justify-center py-20 relative"
+      className="min-h-screen flex items-center justify-center py-16 md:py-20 relative"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.h2
-          className="text-4xl md:text-6xl font-bold mb-16 text-center bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-10 md:mb-16 text-center bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text text-transparent"
           style={{ fontFamily: 'Orbitron, sans-serif' }}
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
@@ -98,7 +98,7 @@ export const ProjectsSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
         >
           {projects.map((project, index) => {
             const Icon = project.icon;
@@ -108,7 +108,7 @@ export const ProjectsSection = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="relative h-80"
+                className="relative h-72 sm:h-80"
                 style={{ perspective: '1000px' }}
               >
                 <motion.div
@@ -118,7 +118,7 @@ export const ProjectsSection = () => {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div
-                    className="absolute inset-0 backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl p-6 backface-hidden"
+                    className="absolute inset-0 backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl p-4 md:p-6 backface-hidden cursor-pointer"
                     style={{
                       backfaceVisibility: 'hidden',
                       boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
@@ -126,7 +126,7 @@ export const ProjectsSection = () => {
                     onClick={() => toggleFlip(index)}
                   >
                     <div
-                      className={`mb-4 h-40 bg-gradient-to-br ${project.gradient} rounded-lg flex items-center justify-center relative overflow-hidden`}
+                      className={`mb-3 md:mb-4 h-32 sm:h-40 bg-gradient-to-br ${project.gradient} rounded-lg flex items-center justify-center relative overflow-hidden`}
                     >
                       <div className="absolute inset-0 opacity-10">
                         <div className="grid grid-cols-6 gap-1 p-4">
@@ -135,23 +135,23 @@ export const ProjectsSection = () => {
                           ))}
                         </div>
                       </div>
-                      <Icon className="w-16 h-16 text-gray-400 z-10" />
+                      <Icon className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 z-10" />
                     </div>
 
                     <h3
-                      className="text-xl font-bold mb-2 bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent"
+                      className="text-lg md:text-xl font-bold mb-2 bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent"
                       style={{ fontFamily: 'Orbitron, sans-serif' }}
                     >
                       {project.title}
                     </h3>
 
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-3 md:mb-4 line-clamp-2">{project.description}</p>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="text-xs backdrop-blur-md bg-[rgba(26,26,26,0.5)] border border-[rgba(192,192,192,0.2)] px-3 py-1 rounded-full text-gray-300"
+                          className="text-[10px] sm:text-xs backdrop-blur-md bg-[rgba(26,26,26,0.5)] border border-[rgba(192,192,192,0.2)] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-gray-300"
                         >
                           {tag}
                         </span>
@@ -160,7 +160,7 @@ export const ProjectsSection = () => {
                   </div>
 
                   <div
-                    className="absolute inset-0 backdrop-blur-md bg-[rgba(26,26,26,0.9)] border border-[rgba(192,192,192,0.3)] rounded-xl p-6 backface-hidden"
+                    className="absolute inset-0 backdrop-blur-md bg-[rgba(26,26,26,0.9)] border border-[rgba(192,192,192,0.3)] rounded-lg md:rounded-xl p-4 md:p-6 backface-hidden cursor-pointer"
                     style={{
                       backfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)',
@@ -169,36 +169,36 @@ export const ProjectsSection = () => {
                     onClick={() => toggleFlip(index)}
                   >
                     <h3
-                      className="text-2xl font-bold mb-4 bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent"
+                      className="text-xl md:text-2xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent"
                       style={{ fontFamily: 'Orbitron, sans-serif' }}
                     >
                       {project.title}
                     </h3>
 
-                    <p className="text-gray-300 mb-6">{project.description}</p>
+                    <p className="text-gray-300 text-sm md:text-base mb-4 md:mb-6">{project.description}</p>
 
-                    <div className="space-y-3">
+                    <div className="space-y-2 md:space-y-3">
                       <motion.button
-                        className="w-full backdrop-blur-md bg-[rgba(192,192,192,0.1)] border border-[rgba(192,192,192,0.3)] rounded-lg px-4 py-3 text-gray-300 font-semibold flex items-center justify-center gap-2"
+                        className="w-full backdrop-blur-md bg-[rgba(192,192,192,0.1)] border border-[rgba(192,192,192,0.3)] rounded-lg px-3 py-2 md:px-4 md:py-3 text-gray-300 font-semibold flex items-center justify-center gap-2 text-sm md:text-base"
                         whileHover={{
                           scale: 1.05,
                           boxShadow: '0 0 20px rgba(192, 192, 192, 0.4)',
                         }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <ExternalLink size={18} />
+                        <ExternalLink className="w-4 h-4" />
                         VIEW PROJECT
                       </motion.button>
 
                       <motion.button
-                        className="w-full backdrop-blur-md bg-[rgba(192,192,192,0.1)] border border-[rgba(192,192,192,0.3)] rounded-lg px-4 py-3 text-gray-300 font-semibold flex items-center justify-center gap-2"
+                        className="w-full backdrop-blur-md bg-[rgba(192,192,192,0.1)] border border-[rgba(192,192,192,0.3)] rounded-lg px-3 py-2 md:px-4 md:py-3 text-gray-300 font-semibold flex items-center justify-center gap-2 text-sm md:text-base"
                         whileHover={{
                           scale: 1.05,
                           boxShadow: '0 0 20px rgba(192, 192, 192, 0.4)',
                         }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <Code size={18} />
+                        <Code className="w-4 h-4" />
                         VIEW CODE
                       </motion.button>
                     </div>

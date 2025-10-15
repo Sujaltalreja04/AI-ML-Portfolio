@@ -6,7 +6,7 @@ export const ParticleBackground = () => {
   const particlesRef = useRef<THREE.Points>(null);
   const mousePos = useRef({ x: 0, y: 0 });
 
-  const particleCount = 1500;
+  const particleCount = 800;
 
   const [positions, colors] = useMemo(() => {
     const positions = new Float32Array(particleCount * 3);

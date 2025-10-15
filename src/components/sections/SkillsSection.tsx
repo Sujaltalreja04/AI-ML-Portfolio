@@ -51,12 +51,12 @@ export const SkillsSection = () => {
     <section
       id="skills"
       ref={ref}
-      className="min-h-screen flex items-center justify-center py-20 relative"
+      className="min-h-screen flex items-center justify-center py-16 md:py-20 relative"
       style={{ background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%)' }}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.h2
-          className="text-4xl md:text-6xl font-bold mb-16 text-center bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-10 md:mb-16 text-center bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text text-transparent"
           style={{ fontFamily: 'Orbitron, sans-serif' }}
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
@@ -65,8 +65,8 @@ export const SkillsSection = () => {
           TECHNICAL SKILLS
         </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="hidden lg:block h-[500px]">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="hidden lg:block h-[400px] xl:h-[500px]">
             <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
               <ambientLight intensity={0.5} />
               <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
@@ -97,7 +97,7 @@ export const SkillsSection = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6"
           >
             {skills.map((skill, index) => {
               const Icon = skill.icon;
@@ -105,30 +105,30 @@ export const SkillsSection = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-xl p-6"
+                  className="backdrop-blur-md bg-[rgba(26,26,26,0.7)] border border-[rgba(192,192,192,0.2)] rounded-lg md:rounded-xl p-4 md:p-6"
                   whileHover={{
                     scale: 1.05,
                     boxShadow: '0 0 30px rgba(192, 192, 192, 0.3)',
                   }}
                 >
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                     <div
-                      className="w-12 h-12 rounded-lg flex items-center justify-center"
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center"
                       style={{
                         background: `linear-gradient(135deg, ${skill.color} 0%, #606060 100%)`,
                       }}
                     >
-                      <Icon className="w-6 h-6 text-white" />
+                      <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </div>
                     <h3
-                      className="text-lg font-bold bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent"
+                      className="text-base md:text-lg font-bold bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent"
                       style={{ fontFamily: 'Orbitron, sans-serif' }}
                     >
                       {skill.name}
                     </h3>
                   </div>
 
-                  <div className="relative h-3 bg-gray-800 rounded-full overflow-hidden">
+                  <div className="relative h-2 md:h-3 bg-gray-800 rounded-full overflow-hidden">
                     <motion.div
                       className="absolute inset-y-0 left-0 rounded-full"
                       style={{

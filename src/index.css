@@ -12,6 +12,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -19,6 +21,17 @@ body {
   background: #0a0a0a;
   color: white;
   overflow-x: hidden;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .backface-hidden {
@@ -29,6 +42,27 @@ body {
 .preserve-3d {
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(12px);
+  }
 }
 
 ::-webkit-scrollbar {
